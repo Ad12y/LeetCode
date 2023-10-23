@@ -6,10 +6,8 @@ class Solution(object):
         print(ps)
         for i in reversed(ps):
             t = float(target - i[0])/i[1]
-            print(t)
             if len(stack) == 0 or t > stack[-1]:
                 stack.append(t)
-        print(stack)
         return len(stack)
 
         """
