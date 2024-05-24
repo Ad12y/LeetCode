@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select Department, Employee, salary from (Select dense_rank() over (partition by D.name order by salary desc) as dr, D.name as Department, E.name as Employee, salary from Employee E left join department D on departmentId = D.id) as temp where dr < 4
