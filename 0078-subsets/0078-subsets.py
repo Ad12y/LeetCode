@@ -1,27 +1,17 @@
-class Solution(object):
-    def subsets(self, nums):
-        stack = []
-        res = []
-        n = len(nums)
-        def recur(i):
-            if i >= n:
-                res.append(stack[:])
-                return
-
-            stack.append(nums[i])
-            recur(i+1)
-
-            stack.pop()
-            recur(i+1)
-            return 
-
-        recur(0)
-        return res
-            
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        self.ans = []
+        def recur(lst, i):
+            if i > len(nums) - 1:
+                self.ans.append(lst[:])
+                return 
+            lst.append(nums[i])
+            recur(lst, i+1)
+            lst.pop()
+            recur(lst, i+1)
+            return
+        recur([], 0)
+        return self.ans
 
 
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         
