@@ -1,6 +1,6 @@
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        m, n = len(heights[0]), len(heights[0])
+        m, n = len(heights), len(heights[0])
         def dfs(val, i ,j, visited, res):
             if i<0 or j<0:
                 res.add(1)
