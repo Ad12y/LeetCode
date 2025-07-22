@@ -1,23 +1,21 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        dic_1 = {}
-        dic_2 = {}
-        for i in s:
-            try:
-                dic_1[i] += 1
-            except:
-                dic_1[i] = 1
-        for i in t:
-            try:
-                dic_2[i] += 1
-            except:
-                dic_2[i] = 1
-        
-        return dic_2 == dic_1
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        dic1 = {}
+        dic2 = {}
 
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+        for i in range(0, len(s)):
+            if s[i] not in dic1.keys():
+                dic1[s[i]] = 1
+            else:
+                dic1[s[i]] += 1
+
+        for i in range(0, len(t)):
+            if t[i] not in dic2.keys():
+                dic2[t[i]] = 1
+            else:
+                dic2[t[i]] += 1
+        
+
+        return dic1 == dic2
+
         
